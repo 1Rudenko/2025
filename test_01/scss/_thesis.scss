@@ -1,0 +1,59 @@
+.home-page {
+
+    // .home-page__thesis
+
+    &__thesis {
+        background-color: var(--gray-color);
+        background-color: var(--white-color);
+        padding: toRem(30);
+    }
+}
+.thesis {
+
+    // .thesis__container
+
+
+    // .thesis__items
+
+    &__body {
+        
+        column-gap: toRem(30);
+        row-gap: toRem(10);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(toRem(200), 1fr));
+        
+        // 
+    }
+    // .thesis__item
+    &__item {
+        padding: 10px;
+        @media (min-width: toEm(768)) and (max-width: toEm(1629.98)) {
+            padding: toRem(12);
+        }
+        @media (min-width: toEm(1630)) {
+            padding: toRem(20);
+        }
+    }
+
+    &__title {
+        text-align: center;
+
+        color: var(--dark-color-4);
+			font-size: toRem(18);
+			@media (min-width: toEm(768)) and (max-width: toEm(1629.98)) {
+				font-size: toRem(26);
+			}
+			@media (min-width: toEm(1630)) {
+				font-size: toRem(30);
+			}
+			&:not(:last-child) {
+				margin-block-end: toEm(30, 30);
+			}
+    }
+
+    &__text p {
+        // color: red;
+    }
+
+}
+

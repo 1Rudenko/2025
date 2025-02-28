@@ -72,3 +72,57 @@ function bodyLock(mode) {
 
 	document.documentElement.classList.toggle('lock', mode)
 }
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     // Отримуємо всі заголовки спойлерів
+//     const titles = document.querySelectorAll(".thesis__title");
+
+//     titles.forEach(title => {
+//         // Ховаємо текст за замовчуванням
+//         const content = title.nextElementSibling;
+//         if (content) {
+//             content.style.display = "none";
+//         }
+
+//         title.addEventListener("click", function () {
+//             // Перемикаємо клас 'active' для заголовка
+//             this.classList.toggle("active");
+            
+//             // Отримуємо наступний елемент (текст спойлера)
+//             if (content) {
+//                 content.style.display = this.classList.contains("active") ? "block" : "none";
+//             }
+//         });
+//     });
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Отримуємо всі заголовки спойлерів
+    const titles = document.querySelectorAll(".thesis__title");
+
+    titles.forEach(title => {
+        // Ховаємо текст за замовчуванням
+        const content = title.nextElementSibling;
+        if (content) {
+            content.style.maxHeight = "0";
+            content.style.overflow = "hidden";
+            content.style.transition = "max-height 0.3s ease-out";
+        }
+
+        title.addEventListener("click", function () {
+            // Перемикаємо клас 'active' для заголовка
+            this.classList.toggle("active");
+            
+            // Отримуємо наступний елемент (текст спойлера)
+            if (content) {
+                if (this.classList.contains("active")) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = "0";
+                }
+            }
+        });
+    });
+});

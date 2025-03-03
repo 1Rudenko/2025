@@ -69,18 +69,30 @@
         &::after {
             transform: rotate(-40deg);
             left: 8px;
+            
         }
         &::before {
             transform: rotate(40deg);
             left: 0px;
+            
         }
+        &.active {
+            &::after {
+                transform: rotate(40deg);
+            }
+            &::before {
+                transform: rotate(-40deg);
+            }
+        }
+        
     }
+    
 
     &__text  {
         // display: none;
         // transition: max-height 0.3s ease-out;
 
     }
-
 }
+
 

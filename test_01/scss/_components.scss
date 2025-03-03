@@ -4,7 +4,9 @@
 	}
 	// .section-header__title
 	&__title {
-		color: var(--white-color);
+		text-transform: uppercase;
+		color: var(--hover-color);
+		text-align: center;
 		font-size: toRem(20);
 		font-weight: 700;
 
@@ -15,10 +17,11 @@
 			font-size: toRem(38);
 		}
 		&:not(:last-child) {
-			margin-block-end: toEm(30, 38);
+			margin-block-end: toEm(50, 38);
 		}
 
 		&--big {
+			color: var(--white-color);
 			font-size: toRem(28);
 			@media (min-width: toEm(768)) and (max-width: toEm(1629.98)) {
 				font-size: toRem(48);
@@ -57,14 +60,21 @@
 }
 // Елементи форм
 .button {
+	text-transform: uppercase;
 	border-radius: toRem(4);
 	padding: toRem(8) toRem(20);
 	font-size: toRem(14);
 	font-weight: 600;
-	color: var(--white-color);
-	background-color: var(--gray-color);
-	transition: background-color 0.3s;
+	// color: var(--white-color);
+	background-color: transparent;
+	border: 1px solid var(--hover-color);
+	transition: background-color 0.3s, color 0.3s;
+	&--color {
+		// background-color: var(--gray-color);
+		background-color: var(--hover-color);
+		color: var(--white-color);
 
+	}
 	span {
 		display: flex;
 		gap: toRem(9);
@@ -78,7 +88,9 @@
 	}
 	@media (any-hover: hover) {
 		&:hover {
-			background-color: var(--hover-color);
+			background-color: var(--gray-color);
+			border-color: var(--gray-color);
+			color: var(--white-color);
 		}
 	}
 }

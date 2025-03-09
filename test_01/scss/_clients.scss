@@ -1,0 +1,43 @@
+.home-page {
+
+    // .home-page__clients
+
+    &__clients {
+        padding: toRem(60);
+    }
+}
+.clients {
+
+    // .clients__container
+
+   
+
+    // .clients__section-header
+
+    &__section-header {
+        &:not(:last-child) {
+            margin-bottom: toRem(50);;
+        }
+    }
+
+    // .clients__images
+
+    &__images {
+        display: flex;
+        gap: toRem(30);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    // .clients__image
+
+    &__image {
+    }
+}
+.section-header {
+
+    // .section-header__title
+
+    &__title {
+    }
+}

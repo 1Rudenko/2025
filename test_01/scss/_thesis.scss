@@ -1,0 +1,102 @@
+.home-page {
+
+    // .home-page__thesis
+
+    &__thesis {
+        background-color: var(--gray-color);
+        background-color: var(--dark-color-3);
+        color: var(--white-color);
+    //     --dark-color-1: #1f1f1f;
+	// --dark-color-2: #0f0f0f;
+	// --dark-color-3: #1a1a1a;
+        padding: toRem(30);
+    }
+}
+.thesis {
+    // background-color: rgb(37, 36, 36, 0.9);
+    // background-color: rgb(31, 31, 31, 0.9);
+    background-color: var(--dark-color-6);
+    // .thesis__container
+
+
+    // .thesis__items
+
+    &__body {
+        
+        column-gap: toRem(35);
+        row-gap: toRem(10);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(toRem(190), 1fr));
+        
+        // 
+    }
+    // .thesis__item
+    &__item {
+        padding: 10px;
+        text-align: center;
+        @media (min-width: toEm(768)) and (max-width: toEm(1629.98)) {
+            padding: toRem(12);
+        }
+        @media (min-width: toEm(1630)) {
+            padding: toRem(20);
+        }
+    }
+
+    &__title {
+        cursor: pointer;
+        display: inline-block;
+        text-transform: uppercase;
+        position: relative;
+		font-size: toRem(18);
+        padding-left: 30px;
+        // transition: max-height 3.3s ease-out;
+		@media (min-width: toEm(768)) and (max-width: toEm(1629.98)) {
+			font-size: toRem(20);
+		}
+		@media (min-width: toEm(1630)) {
+			font-size: toRem(22);
+		}
+		&:not(:last-child) {
+			margin-block-end: toEm(24, 30);
+		}
+
+        &::after,
+        &::before {
+            position: absolute;
+            content: '';
+            width: 10px;
+            height: 2px;
+            background-color: var(--white-color);
+            top: 50%;
+        }
+        &::after {
+            transform: rotate(-40deg);
+            left: 8px;
+            
+        }
+        &::before {
+            transform: rotate(40deg);
+            left: 0px;
+            
+        }
+        &.active {
+            &::after {
+                transform: rotate(40deg);
+            }
+            &::before {
+                transform: rotate(-40deg);
+            }
+        }
+        
+    }
+    
+
+    &__text  {
+        text-align: left;
+        // display: none;
+        // transition: max-height 0.3s ease-out;
+
+    }
+}
+
+
